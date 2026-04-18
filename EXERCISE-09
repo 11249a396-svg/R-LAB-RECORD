@@ -1,0 +1,92 @@
+Question 1: Student Marks Analysis
+students <- data.frame(
+Name = c("Vikram","Divya","Rohit","Pooja","Anil","Kavya","Manoj","Sowmya","Deepak","Nisha"),
+Maths = c(78,85,69,91,74,88,72,95,66,80),
+Science = c(70,82,65,89,78,84,68,93,72,79),
+English = c(85,78,70,94,80,86,75,90,77,83)
+)
+mean_marks <- sapply(students[,2:4], mean)
+median_marks <- sapply(students[,2:4], median)
+sd_marks <- sapply(students[,2:4], sd)
+students$Total <- rowSums(students[,2:4])
+top_student <- students[which.max(students$Total), ]
+avg_math <- mean(students$Maths)
+above_avg_math <- students[students$Maths > avg_math, ]
+mean_marks
+median_marks
+sd_marks
+top_student
+above_avg_math
+
+Question 2: Retail Sales Analysis
+sales <- data.frame(
+Product = c("Tablet","Camera","Speaker","Shoes","Watch","Printer","Monitor"),
+Day1 = c(6,2,5,9,3,7,4),
+Day2 = c(5,3,6,10,4,6,5),
+Day3 = c(7,1,4,8,2,8,6),
+Day4 = c(6,2,5,11,3,7,5),
+Day5 = c(8,4,6,9,5,9,7)
+)
+sales_stats <- data.frame(
+Product = sales$Product,
+Mean = apply(sales[,2:6], 1, mean),
+Max = apply(sales[,2:6], 1, max),
+Min = apply(sales[,2:6], 1, min),
+Variance = apply(sales[,2:6], 1, var)
+)
+max_avg_product <- sales_stats[which.max(sales_stats$Mean), ]
+sales_stats
+max_avg_product
+
+Question 3: Patient Age Analysis
+patients <- data.frame(
+PatientID = 301:310,
+Name = c("Anil","Geetha","Karthik","Pavithra","Ramesh","Divya","Sanjay","Latha","Pradeep","Kumar"),
+Age = c(42,36,55,28,62,47,53,33,45,51)
+)
+mean_age <- mean(patients$Age)
+median_age <- median(patients$Age)
+range_age <- range(patients$Age)
+sd_age <- sd(patients$Age)
+older_patients <- patients[patients$Age > 50, ]
+mean_age
+median_age
+range_age
+sd_age
+older_patients
+
+Question 4: Employee Salary Analysis
+employees <- data.frame(
+EmpID = 201:210,
+Name = c("Vijay","Anu","Kiran","Meera","Suresh","Deepa","Arjun","Ravi","Sneha","Varun"),
+Dept = c("IT","HR","Finance","IT","HR","Finance","IT","HR","Finance","IT"),
+Salary = c(35000,38000,42000,36000,39000,45000,34000,40000,47000,37000)
+)
+dept_stats <- aggregate(Salary ~ Dept, data=employees,
+function(x) c(Mean=mean(x), Median=median(x)))
+dept_stats <- do.call(data.frame, dept_stats)
+overall_avg <- mean(employees$Salary)
+high_earners <- employees[employees$Salary > overall_avg, ]
+dept_stats
+high_earners
+
+Question 5: Customer Ratings Analysis
+ratings <- data.frame(
+ProductID = 11:20,
+Product = c("TV","Fridge","AC","Mixer","Fan","Heater","Oven","Cooler","Iron","Vacuum"),
+Rating = c(5,4,3,5,4,4,3,5,4,5)
+)
+mean_rating <- mean(ratings$Rating)
+median_rating <- median(ratings$Rating)
+var_rating <- var(ratings$Rating)
+getmode <- function(v) {
+uniqv <- unique(v)
+uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+mode_rating <- getmode(ratings$Rating)
+top_rated <- ratings[ratings$Rating > 4, ]
+mean_rating
+median_rating
+mode_rating
+var_rating
+top_rated
