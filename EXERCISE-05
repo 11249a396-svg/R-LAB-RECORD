@@ -1,0 +1,93 @@
+Question 1: Employee Name Standardization
+names <- c("kiran", "Latha", "vijay")
+upper_names <- toupper(names)
+name_length <- nchar(upper_names)
+upper_names
+name_length
+
+Question 2: Student Email Processing
+emails <- c("kiran@gmail.com", "latha@yahoo.com", "vijay@outlook.com")
+usernames <- sub("@.*", "", emails)
+usernames
+
+Question 3: Input Cleanup
+input <- c(" Machine Learning ", " Big Data ", " Cloud ")
+clean_input <- trimws(input)
+clean_input
+
+Question 4: Product Code Validation
+product_codes <- c("PRD555", "XYZ111", "PRD888")
+valid_codes <- startsWith(product_codes, "PRD")
+valid_codes
+
+Question 5: Text Replacement
+report <- "error found in module, error occurred again"
+updated_report <- gsub("error", "issue", report)
+updated_report
+
+Question 6: Password Strength
+password <- "pass789"
+if(nchar(password) >= 8){
+print("Strong Password")
+} else {
+print("Weak Password")
+}
+
+Question 7: Word Count
+sentence <- "Data science is very useful today"
+word_count <- length(strsplit(sentence, " ")[[1]])
+word_count
+
+Question 8: File Extension Extraction
+files <- c("notes.txt", "presentation.ppt", "photo.jpg")
+extensions <- sub(".*\\.", "", files)
+extensions
+
+Question 9: Name Abbreviation
+names <- c("Sowmya", "Pradeep", "Harini")
+abbr <- substr(names, 1, 3)
+abbr
+
+Question 10: Pattern Matching
+names <- c("Kiran", "Latha", "Mohan", "Rohit")
+matched_names <- grep("a", names, value = TRUE)
+matched_names
+
+Question 11: Student Data Cleaning
+students <- data.frame(
+Name = c(" Kavya ", "ROHIT ", " anil"),
+Email = c("kavya@UNIV.edu", "rohit@univ.edu", "anil@yahoo.com"),
+Department = c(" it", "CSE ", " Ece ")
+)
+students$Name <- trimws(students$Name)
+students$Department <- trimws(students$Department)
+students$Name <- toupper(students$Name)
+students$Email <- tolower(students$Email)
+students$Department <- toupper(students$Department)
+students$Username <- sub("@.*", "", students$Email)
+students$ValidEmail <- grepl("@univ.edu$", students$Email)
+clean_students <- students[students$ValidEmail == TRUE, ]
+clean_students
+
+Question 12: Product Inventory Cleaning
+products <- data.frame(
+Product = c(" iphone ", "SONY-TV ", " hp laptop"),
+Code = c("PRD-501-IPH", "PRD-602-SON", "PRD-703-HPL")
+)
+products$Product <- trimws(products$Product)
+products$Product <- tools::toTitleCase(tolower(products$Product))
+products$ProductCode <- sub("PRD-[0-9]+-", "", products$Code)
+products
+
+Question 13: Comment Moderation
+comments <- data.frame(
+User = c("X", "Y", "Z"),
+Comment = c(
+"This service is bad",
+"BAD quality product",
+"Not bad actually"
+)
+)
+comments$Comment <- tolower(comments$Comment)
+comments$CleanComment <- gsub("bad", "unacceptable", comments$Comment)
+comments
