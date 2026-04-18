@@ -1,0 +1,110 @@
+Question 1: Student Marks (Vector)
+marks <- c(65, 72, 88, 91, 79)
+total <- sum(marks)
+average <- mean(marks)
+highest <- max(marks)
+total
+average
+highest
+
+Question 2: Temperature Monitoring
+temperature <- c(30, 29, 31, 32, 33, 34, 30)
+min_temp <- min(temperature)
+max_temp <- max(temperature)
+min_temp
+max_temp
+
+Question 3: Employee Profile (List)
+employee <- list(
+ID = 205,
+Name = "Rahul",
+Salary = 52000,
+Department = "Finance"
+)
+employee
+employee$Name
+employee$Salary
+
+Question 4: Patient Record (List)
+patient <- list(
+PatientID = 305,
+Name = "Lakshmi",
+Age = 39,
+TestResults = c(110, 135, 128)
+)
+patient
+patient$TestResults
+
+Question 5: Student Database (Data Frame)
+students <- data.frame(
+RollNo = c(10, 20, 30),
+Name = c("Rohit", "Divya", "Kiran"),
+Dept = c("IT", "CSE", "ECE"),
+Marks = c(78, 84, 90)
+)
+students
+
+Question 6: Sales Report
+sales <- data.frame(
+Month = c("Apr", "May", "Jun"),
+Sales = c(70000, 65000, 72000)
+)
+total_sales <- sum(sales$Sales)
+total_sales
+
+Question 7: E-Commerce System
+prices <- c(1500, 900, 650)
+customer <- list(
+CustomerID = 401,
+Name = "Kavya",
+City = "Hyderabad"
+)
+orders <- data.frame(
+Item = c("Tablet", "Earbuds", "Cable"),
+Price = prices
+)
+prices
+customer
+orders
+
+Question 8: Online Exam System
+subject_marks <- c(82, 76, 89)
+student_profile <- list(
+Name = "Vijay",
+RollNo = 210,
+Marks = subject_marks
+)
+class_results <- data.frame(
+RollNo = c(201, 202, 203),
+Total = c(245, 230, 260)
+)
+student_profile
+class_results
+Question 9: Bank System
+balances <- c(8000, 7800, 8200)
+customer <- list(
+AccountNo = 67890,
+Name = "Anil"
+)
+transactions <- data.frame(
+Date = c("05-02", "06-02", "07-02"),
+Amount = c(-1000, 2000, -500)
+)
+balances
+customer
+transactions
+
+Question 10: Real-World Example
+scores <- c(75, 82, 88)
+profile <- list(
+Name = "Sneha",
+Age = 22,
+Scores = scores
+)
+records <- data.frame(
+Subject = c("English", "Maths", "Biology"),
+Marks = scores
+)
+scores
+profile
+records
